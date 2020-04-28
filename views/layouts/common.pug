@@ -1,0 +1,19 @@
+html
+    head
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+        style
+            include ../../style/home.css
+    body
+        div(class="wrap-label")
+            h3(class="text-center") #{titleHeader}
+            ul(class="nav justify-content-center pb-5")
+                li(class="nav-item")
+                    a(class="nav-link " + activeBook, href="/book" ) Kho sách
+                li(class="nav-item")
+                    a(class="nav-link " + activeUsers, href="users" ) Khách hàng 
+                li(class="nav-item")
+                    a(class="nav-link " + activeTransection, href="transection" ) Giao dịch
+                li(class="nav-item")
+                    a(class="nav-link disabled", href="" tabindex="-1" aria-disabled="true") Disabled
+            block header
+            block content

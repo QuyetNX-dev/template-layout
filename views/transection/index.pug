@@ -1,0 +1,29 @@
+extends ../layouts/common.pug
+block content
+  h5(class="mb-3") Lịch sử các lần giao dịch
+  table(class="table")
+    tr
+      th Stt
+      th Khách hàng
+      th Sách
+      th Tình trạng
+      th
+    each item in collectionTransection
+      - var isComplete = item.isComplete
+      tr
+        td= item.stt
+        td= item.name
+        td= item.title
+        td
+          case isComplete
+            when true
+              div Khách đã trả
+            when false
+              a(href="/transection/" + item.id + '/complete') Khách chưa trả
+        td
+          a(href="/transection/delete/" + item.id) &#x2718; Xóa
+  div     
+    a(href="/transection/create") Thêm giao dịch  &#10548;
+  div
+    a(href="/") &#11013; Quay lại
+

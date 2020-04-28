@@ -1,0 +1,14 @@
+extends ../layouts/common.pug
+block content
+  ul 
+    each user in users
+      li(style="margin:0 0 10px") 
+        div
+          h6= user.stt + ': ' + user.name
+        div
+          a(href="users/delete/" + user.id) &#x2718; xóa
+          a(href="users/update/" + user.id) &#8634; sửa
+  div
+    a(href="/users/post") Thêm khách hàng &#10548;
+  div
+    a(href="/") &#11013; Quay lại
