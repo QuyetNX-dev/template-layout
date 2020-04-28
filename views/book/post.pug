@@ -1,0 +1,12 @@
+extends ../layouts/common.pug
+block content
+  form(action="/book/post" method="POST")
+    div(class="mb-3")
+      p(style="margin-bottom: 5px") Title:
+      input(class="form-control" type="text" name="title")
+    div
+      p(style="margin-bottom: 5px") Description:
+      //- input(class="form-control" type="text" name="description")
+      textarea(class="form-control" rows="3" name="description") 
+    div(style="margin-top: 16px")
+      button(class="btn btn-primary pl-5 pr-5") Thêm
